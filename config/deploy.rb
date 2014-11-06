@@ -52,7 +52,7 @@ namespace :images do
   end
 end
 
-after "deploy:updating", "images:symlink"
+after "deploy:bundle", "images:symlink"
 
 namespace :unicorn do
 
@@ -84,7 +84,7 @@ task :symlink_database_yml do
   execute "rm #{release_path}/config/database.yml"
   execute "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
 end
-#after 'deploy:bundle', "symlink_database_yml"
+after "deploy:bundle", "symlink_database_yml"
 
 namespace :deploy do
 
