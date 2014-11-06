@@ -47,12 +47,14 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 namespace :images do
   task :symlink do
-    execute "rm -rf #{release_path}/public/spree"
-    execute "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "rm -rf #{release_path}/public/spree"
+      execute "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+    end
   end
 end
 
-after "deploy:bundle", "images:symlink"
+after "bundler:install", "images:symlink"
 
 namespace :unicorn do
 
@@ -81,10 +83,13 @@ end
 after "deploy:restart", "unicorn:restart"
 
 task :symlink_database_yml do
-  execute "rm #{release_path}/config/database.yml"
-  execute "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  on roles(:app), in: :sequence, wait: 5 do
+    execute "rm #{release_path}/config/database.yml"
+    execute "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
 end
-after "deploy:bundle", "symlink_database_yml"
+
+after "bundler:install", "symlink_database_yml"
 
 namespace :deploy do
 
