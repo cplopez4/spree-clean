@@ -31,6 +31,7 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm', github: 'capistrano/rvm'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-2-stable'
+gem 'spree-bank-transfer', require: 'spree_bank_transfer'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

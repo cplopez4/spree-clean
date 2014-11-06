@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106052663) do
+ActiveRecord::Schema.define(version: 20141106165332) do
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -152,11 +152,11 @@ ActiveRecord::Schema.define(version: 20141106052663) do
     t.integer  "variant_id"
     t.integer  "order_id"
     t.integer  "quantity",                                                    null: false
-    t.decimal  "price",                precision: 8,  scale: 2,               null: false
+    t.decimal  "price",                precision: 10, scale: 2,               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "currency"
-    t.decimal  "cost_price",           precision: 8,  scale: 2
+    t.decimal  "cost_price",           precision: 10, scale: 2
     t.integer  "tax_category_id"
     t.decimal  "adjustment_total",     precision: 10, scale: 2, default: 0.0
     t.decimal  "additional_tax_total", precision: 10, scale: 2, default: 0.0
@@ -239,10 +239,12 @@ ActiveRecord::Schema.define(version: 20141106052663) do
     t.datetime "approved_at"
     t.boolean  "confirmation_delivered",                                     default: false
     t.boolean  "considered_risky",                                           default: false
+    t.integer  "state_lock_version",                                         default: 0,       null: false
   end
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at"
   add_index "spree_orders", ["number"], name: "index_spree_orders_on_number"
+  add_index "spree_orders", ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
   add_index "spree_orders", ["user_id"], name: "index_spree_orders_on_user_id"
 
   create_table "spree_orders_promotions", id: false, force: true do |t|
@@ -288,7 +290,6 @@ ActiveRecord::Schema.define(version: 20141106052663) do
     t.string   "identifier"
     t.string   "cvv_response_code"
     t.string   "cvv_response_message"
-    t.decimal  "uncaptured_amount",    precision: 10, scale: 2, default: 0.0
   end
 
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id"
@@ -305,8 +306,8 @@ ActiveRecord::Schema.define(version: 20141106052663) do
   add_index "spree_preferences", ["key"], name: "index_spree_preferences_on_key", unique: true
 
   create_table "spree_prices", force: true do |t|
-    t.integer  "variant_id",                         null: false
-    t.decimal  "amount",     precision: 8, scale: 2
+    t.integer  "variant_id",                          null: false
+    t.decimal  "amount",     precision: 10, scale: 2
     t.string   "currency"
     t.datetime "deleted_at"
   end
@@ -376,11 +377,13 @@ ActiveRecord::Schema.define(version: 20141106052663) do
   end
 
   create_table "spree_promotion_actions", force: true do |t|
-    t.integer "promotion_id"
-    t.integer "position"
-    t.string  "type"
+    t.integer  "promotion_id"
+    t.integer  "position"
+    t.string   "type"
+    t.datetime "deleted_at"
   end
 
+  add_index "spree_promotion_actions", ["deleted_at"], name: "index_spree_promotion_actions_on_deleted_at"
   add_index "spree_promotion_actions", ["id", "type"], name: "index_spree_promotion_actions_on_id_and_type"
   add_index "spree_promotion_actions", ["promotion_id"], name: "index_spree_promotion_actions_on_promotion_id"
 
@@ -466,7 +469,7 @@ ActiveRecord::Schema.define(version: 20141106052663) do
   create_table "spree_shipments", force: true do |t|
     t.string   "tracking"
     t.string   "number"
-    t.decimal  "cost",                 precision: 8,  scale: 2
+    t.decimal  "cost",                 precision: 10, scale: 2, default: 0.0
     t.datetime "shipped_at"
     t.integer  "order_id"
     t.integer  "address_id"
@@ -718,18 +721,18 @@ ActiveRecord::Schema.define(version: 20141106052663) do
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
 
   create_table "spree_variants", force: true do |t|
-    t.string   "sku",                                     default: "",    null: false
-    t.decimal  "weight",          precision: 8, scale: 2, default: 0.0
-    t.decimal  "height",          precision: 8, scale: 2
-    t.decimal  "width",           precision: 8, scale: 2
-    t.decimal  "depth",           precision: 8, scale: 2
+    t.string   "sku",                                      default: "",    null: false
+    t.decimal  "weight",          precision: 8,  scale: 2, default: 0.0
+    t.decimal  "height",          precision: 8,  scale: 2
+    t.decimal  "width",           precision: 8,  scale: 2
+    t.decimal  "depth",           precision: 8,  scale: 2
     t.datetime "deleted_at"
-    t.boolean  "is_master",                               default: false
+    t.boolean  "is_master",                                default: false
     t.integer  "product_id"
-    t.decimal  "cost_price",      precision: 8, scale: 2
+    t.decimal  "cost_price",      precision: 10, scale: 2
     t.integer  "position"
     t.string   "cost_currency"
-    t.boolean  "track_inventory",                         default: true
+    t.boolean  "track_inventory",                          default: true
     t.integer  "tax_category_id"
     t.datetime "updated_at"
   end
