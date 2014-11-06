@@ -49,7 +49,7 @@ task :symlink_database_yml do
   run "rm #{release_path}/config/database.yml"
   run "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
 end
-after "bundle:install", "symlink_database_yml"
+#after 'deploy:bundle', "symlink_database_yml"
 
 namespace :deploy do
 
