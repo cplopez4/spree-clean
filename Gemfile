@@ -37,6 +37,7 @@ group :doc do
 end
 
 group :production do
+  gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git'
   gem 'pg'
   gem 'unicorn'
 end
