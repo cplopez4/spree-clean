@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm', github: 'capistrano/rvm'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-2-stable'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -37,7 +38,6 @@ group :doc do
 end
 
 group :production do
-  gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git'
   gem 'pg'
   gem 'unicorn'
 end

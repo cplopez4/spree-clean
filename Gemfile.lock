@@ -7,6 +7,15 @@ GIT
       sshkit (~> 1.2)
 
 GIT
+  remote: git://github.com/spree-contrib/better_spree_paypal_express.git
+  revision: 4e65c131b64d09bd6dd7823459a086664a692fa7
+  branch: 2-2-stable
+  specs:
+    spree_paypal_express (2.0.3)
+      paypal-sdk-merchant (= 1.106.1)
+      spree_core (~> 2.2.0)
+
+GIT
   remote: git://github.com/spree/spree.git
   revision: 8e4f2cbe307aa12a1a225f4ff039f0b6415f7b88
   branch: 2-2-stable
@@ -222,6 +231,11 @@ GEM
       mime-types
     paranoia (2.0.2)
       activerecord (~> 4.0)
+    paypal-sdk-core (0.2.10)
+      multi_json (~> 1.0)
+      xml-simple
+    paypal-sdk-merchant (1.106.1)
+      paypal-sdk-core (~> 0.2.3)
     pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
@@ -305,6 +319,7 @@ GEM
       tzinfo
     warden (1.2.3)
       rack (>= 1.0)
+    xml-simple (1.1.4)
 
 PLATFORMS
   ruby
@@ -323,6 +338,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_paypal_express!
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
