@@ -45,6 +45,25 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+namespace :unicorn do
+  desc "Zero-downtime restart of Unicorn"
+  task :restart, except: { no_release: true } do
+    run "kill -s USR2 `cat /tmp/unicorn.spree-clean.pid`"
+  end
+
+  desc "Start unicorn"
+  task :start, except: { no_release: true } do
+    run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
+  end
+
+  desc "Stop unicorn"
+  task :stop, except: { no_release: true } do
+    run "kill -s QUIT `cat /tmp/unicorn.spree-clean.pid`"
+  end
+end
+
+after "deploy:restart", "unicorn:restart"
+
 task :symlink_database_yml do
   run "rm #{release_path}/config/database.yml"
   run "ln -sfn #{shared_path}/config/database.yml #{release_path}/config/database.yml"
