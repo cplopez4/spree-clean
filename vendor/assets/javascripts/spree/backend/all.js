@@ -10,3 +10,5 @@
 //= require spree/backend
 
 //= require_tree .
+
+//= require admin/spree_bank_transfer
