@@ -49,21 +49,21 @@ namespace :unicorn do
 
   desc "Zero-downtime restart of Unicorn"
   task :restart do
-    on roles(:all) do
+    on roles(:app), in: :sequence, wait: 5 do
       execute "kill -s USR2 `cat /tmp/unicorn.spree-clean.pid`"
     end
   end
 
   desc "Start unicorn"
   task :start do
-    on roles(:all) do
-      execute "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D -E production"
     end
   end
 
   desc "Stop unicorn"
   task :stop do
-    on roles(:all) do
+    on roles(:app), in: :sequence, wait: 5 do
       execute "kill -s QUIT `cat /tmp/unicorn.spree-clean.pid`"
     end
   end
