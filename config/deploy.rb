@@ -45,6 +45,15 @@ set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+namespace :images do
+  task :symlink do
+    execute "rm -rf #{release_path}/public/spree"
+    execute "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+  end
+end
+
+after "deploy:updating", "images:symlink"
+
 namespace :unicorn do
 
   desc "Zero-downtime restart of Unicorn"
