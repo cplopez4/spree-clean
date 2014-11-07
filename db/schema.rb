@@ -112,9 +112,9 @@ ActiveRecord::Schema.define(version: 20141107150133) do
     t.integer  "comment_type_id"
   end
 
-  add_index "spree_comments", ["commentable_id"], name: "index_spree_comments_on_commentable_id"
-  add_index "spree_comments", ["commentable_type"], name: "index_spree_comments_on_commentable_type"
-  add_index "spree_comments", ["user_id"], name: "index_spree_comments_on_user_id"
+  add_index "spree_comments", ["commentable_id"], name: "index_spree_comments_on_commentable_id", using: :btree
+  add_index "spree_comments", ["commentable_type"], name: "index_spree_comments_on_commentable_type", using: :btree
+  add_index "spree_comments", ["user_id"], name: "index_spree_comments_on_user_id", using: :btree
 
   create_table "spree_configurations", force: true do |t|
     t.string   "name"
