@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm', github: 'capistrano/rvm'
+gem 'spree', github: 'spree/spree', branch: '2-2-stable'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-2-stable'
 gem 'spree-bank-transfer', require: 'spree_bank_transfer'
 
@@ -54,7 +57,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-gem 'spree', github: 'spree/spree', branch: '2-2-stable'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'

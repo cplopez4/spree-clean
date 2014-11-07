@@ -22,9 +22,9 @@ set :scm, :git
 # role :app, server
 # role :db,  server, :primary => true # This is where Rails migrations will run
 
-set :user, "llamazo"
+set :user, "spree"
 
-set :deploy_to, "/home/llamazo/spree-clean"
+set :deploy_to, "/home/spree/spree-clean"
 set :use_sudo, true
 
 # Default value for :log_level is :debug
@@ -56,7 +56,7 @@ namespace :images do
   end
 end
 
-after "bundler:install", "images:symlink"
+# after "bundler:install", "images:symlink"
 
 namespace :unicorn do
 

@@ -21,10 +21,10 @@ pid "/tmp/unicorn.spree-clean.pid"
 if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  working_directory "/home/llamazo/spree-clean/current"
+  working_directory "/home/spree/spree-clean/current"
 
   # feel free to point this anywhere accessible on the filesystem user 'spree'
-  shared_path = "/home/llamazo/spree-clean/shared"
+  shared_path = "/home/spree/spree-clean/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"

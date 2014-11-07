@@ -37,11 +37,11 @@ role :db,  "llamazo.cloudapp.net", :primary => true
 # And/or per server (overrides global)
 # ------------------------------------
 server 'llamazo.cloudapp.net',
-  user: 'llamazo',
+  user: 'spree',
   roles: %w{web app db},
   ssh_options: {
-    user: 'llamazo', # overrides user setting above
+    user: 'spree', # overrides user setting above
     forward_agent: false,
     auth_methods: %w(password),
-    password: 'Llamazo1101'
+    password: 'Spree1101'
   }
