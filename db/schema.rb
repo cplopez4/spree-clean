@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106232640) do
+ActiveRecord::Schema.define(version: 20141107150133) do
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -90,6 +90,28 @@ ActiveRecord::Schema.define(version: 20141106232640) do
 
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+
+  create_table "spree_comment_types", force: true do |t|
+    t.string   "name"
+    t.string   "applies_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_comments", force: true do |t|
+    t.string   "title",            limit: 50
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comment_type_id"
+  end
+
+  add_index "spree_comments", ["commentable_id"], name: "index_spree_comments_on_commentable_id"
+  add_index "spree_comments", ["commentable_type"], name: "index_spree_comments_on_commentable_type"
+  add_index "spree_comments", ["user_id"], name: "index_spree_comments_on_user_id"
 
   create_table "spree_configurations", force: true do |t|
     t.string   "name"

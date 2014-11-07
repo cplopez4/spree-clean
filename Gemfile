@@ -35,6 +35,7 @@ gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :bran
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '2-2-stable'
 gem 'spree-bank-transfer', require: 'spree_bank_transfer'
+gem "spree_comments", github: 'spree/spree_comments', branch: '2-2-stable'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
