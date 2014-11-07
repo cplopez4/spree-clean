@@ -20,4 +20,4 @@ test:
 
 production:
   adapter: postgresql
-  database: spree
+  database: llamazo
