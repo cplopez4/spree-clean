@@ -78,9 +78,6 @@ namespace :unicorn do
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
       execute "kill -s QUIT `cat /tmp/unicorn.spree-clean.pid`"
-      execute "cd #{current_path}" 
-      execute "RAILS_ENV=production bundle exec rake db:drop"
-      execute "RAILS_ENV=production bundle exec rake db:create"
     end
   end
 end
@@ -98,14 +95,14 @@ end
 # after "unicorn:stop", "deploy:dropcreate"
 
 namespace :deploy do
-  desc "Reload database on Production"
-  task :dropcreate do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{current_path}" 
-      execute "RAILS_ENV=production bundle exec rake db:drop"
-      execute "RAILS_ENV=production bundle exec rake db:create"
-    end
-  end
+  # desc "Reload database on Production"
+  # task :dropcreate do
+  #   on roles(:app), in: :sequence, wait: 5 do
+  #     execute "cd #{current_path}" 
+  #     execute "RAILS_ENV=production bundle exec rake db:drop"
+  #     execute "RAILS_ENV=production bundle exec rake db:create"
+  #   end
+  # end
 
   desc 'Restart application'
   task :restart do
