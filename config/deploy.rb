@@ -1,4 +1,4 @@
-# config valid only for Capistrano 3.1
+  # config valid only for Capistrano 3.1
 lock '3.2.1'
 
 # Default branch is :master
@@ -24,7 +24,7 @@ set :scm, :git
 
 set :user, "llamazo"
 
-set :deploy_to, "/home/spree/spree-clean"
+set :deploy_to, "/home/llamazo/spree-clean"
 set :use_sudo, true
 
 # Default value for :log_level is :debug
@@ -117,9 +117,9 @@ namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      within release_path do
-        execute :rake, 'cache:clear'
-      end
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
     end
   end
 
