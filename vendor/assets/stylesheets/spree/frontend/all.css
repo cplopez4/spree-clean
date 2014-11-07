@@ -9,4 +9,5 @@
  *= require_self
  *= require_tree .
  *= require store/spree_bank_transfer
+ *= require spree/frontend/spree_static_content
 */
