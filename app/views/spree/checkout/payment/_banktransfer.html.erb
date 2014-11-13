@@ -1,0 +1,18 @@
+<% if (banks = Spree::Bank.active).any? %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Account No</th>
+      <th>Rut</th>
+      <th>Confirmation Email</th>
+    </tr>
+    <% banks.each do |bank| %>
+      <tr>
+        <td><%= bank.name %></td>
+        <td><%= bank.account_no %></td>
+        <td><%= bank.rut %></td>
+        <td><%= bank.confirmation_email %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
