@@ -1,3 +1,7 @@
 .block-fix.state{
 	display: block;
 }
+div.fa-file-excel-o{
+	margin-left: 20px;
+	cursor: pointer;
+}

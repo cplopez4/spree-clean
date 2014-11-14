@@ -79,6 +79,11 @@
         </div>
       </div>
     <% end %>
+    <form action="<%= main_app.exportxls_url %>.xls" method="post" id="xlsform">
+      <%= token_tag(nil) %>
+      <input type="hidden" name="orders" />
+      <div class="fa fa-file-excel-o button" name="button_xls"> Export XLS</div>
+    </form>
   </div>
 <% end %>
 
@@ -174,3 +179,13 @@
 <% end %>
 
 <%= paginate @orders %>
+
+<script type="text/javascript">
+    var ordersJson = <%= @orders.to_json.html_safe || [] %>;
+
+  $("[name='button_xls']").click(function(){
+    $("[name='orders']").val(JSON.stringify(ordersJson));
+    $('#xlsform').submit();
+  });
+
+</script>
