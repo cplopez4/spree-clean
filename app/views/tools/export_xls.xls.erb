@@ -7,39 +7,45 @@
   <Worksheet ss:Name="Orders - La Condonería">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">ID</Data></Cell>
-        <Cell><Data ss:Type="String">Number</Data></Cell>
-        <Cell><Data ss:Type="String">Payment Total</Data></Cell>
-        <Cell><Data ss:Type="String">Item Total</Data></Cell>
-        <Cell><Data ss:Type="String">Promo Total</Data></Cell>
-        <Cell><Data ss:Type="String">Total</Data></Cell>
-        <Cell><Data ss:Type="String">Shipment Total</Data></Cell>
-        <Cell><Data ss:Type="String">Additional Tax</Data></Cell>
-        <Cell><Data ss:Type="String">Currency</Data></Cell>
-        <Cell><Data ss:Type="String">Shipment State</Data></Cell>
-        <Cell><Data ss:Type="String">Payment State</Data></Cell>
-        <Cell><Data ss:Type="String">Item Count</Data></Cell>
-        <Cell><Data ss:Type="String">Considered Risky</Data></Cell>
-        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">ORDEN ID</Data></Cell>
+        <Cell><Data ss:Type="String">NUMERO ORDEN</Data></Cell>
+        <Cell><Data ss:Type="String">FECHA</Data></Cell>
+        <Cell><Data ss:Type="String">ESTADO</Data></Cell>
+        <Cell><Data ss:Type="String">NOMBRE</Data></Cell>
+        <Cell><Data ss:Type="String">EMAIL</Data></Cell>
+        <Cell><Data ss:Type="String">DIRECCION</Data></Cell>
+        <Cell><Data ss:Type="String">COMUNA</Data></Cell>
+        <Cell><Data ss:Type="String">REGION</Data></Cell>
+        <Cell><Data ss:Type="String">PRODUCTOS COMPRADOS</Data></Cell>
+        <Cell><Data ss:Type="String">CANTIDAD DEL PRODUCTO</Data></Cell>
+        <Cell><Data ss:Type="String">TOTAL</Data></Cell>
+        <Cell><Data ss:Type="String">INFO ADICIONAL PEDIDO</Data></Cell>
+        <Cell><Data ss:Type="String">TIPO DE ENVIO</Data></Cell>
       </Row>
     <% @orders.each do |order| %>
-      <Row>
-        <Cell><Data ss:Type="Number"><%= order['id'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['number'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['payment_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['item_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['promo_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['shipment_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['additional_tax_total'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['currency'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['shipment_state'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['payment_state'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['item_count'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['considered_risky'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['email'] %></Data></Cell>
-      </Row>
+      <% if order['items'] %>
+        <% order['items'].each_with_index  do |item, index| %>
+          <Row>
+            <Cell><Data ss:Type="<%= index == 0 ? "Number" : "String" %>"><%= index == 0 ? order['id'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['number'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['fix_date'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['payment_state'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['ship_name'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['email'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['ship_address'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['ship_city'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['ship_city'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= item['name_fix'] %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= item['quantity'] %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= item['total'] %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['special_instructions'] : "" %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= index == 0 ? order['shipping_method'] : "" %></Data></Cell>
+          </Row>
+
+        <% end %>
+      <% end %>
     <% end %>
+    
     </Table>
   </Worksheet>
 </Workbook>

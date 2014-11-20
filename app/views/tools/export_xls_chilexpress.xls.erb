@@ -7,37 +7,47 @@
   <Worksheet ss:Name="Orders Chilexpress - La Condonería">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">ID</Data></Cell>
-        <Cell><Data ss:Type="String">Number</Data></Cell>
-        <Cell><Data ss:Type="String">Payment Total</Data></Cell>
-        <Cell><Data ss:Type="String">Item Total</Data></Cell>
-        <Cell><Data ss:Type="String">Promo Total</Data></Cell>
-        <Cell><Data ss:Type="String">Total</Data></Cell>
-        <Cell><Data ss:Type="String">Shipment Total</Data></Cell>
-        <Cell><Data ss:Type="String">Additional Tax</Data></Cell>
-        <Cell><Data ss:Type="String">Currency</Data></Cell>
-        <Cell><Data ss:Type="String">Shipment State</Data></Cell>
-        <Cell><Data ss:Type="String">Payment State</Data></Cell>
-        <Cell><Data ss:Type="String">Item Count</Data></Cell>
-        <Cell><Data ss:Type="String">Considered Risky</Data></Cell>
-        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">PRODUCTO</Data></Cell>
+        <Cell><Data ss:Type="String">SERVICIO</Data></Cell>
+        <Cell><Data ss:Type="String">DESTINO</Data></Cell>
+        <Cell><Data ss:Type="String">PESO</Data></Cell>
+        <Cell><Data ss:Type="String">DESTINATARIO</Data></Cell>
+        <Cell><Data ss:Type="String">CALLE</Data></Cell>
+        <Cell><Data ss:Type="String">NUMERO</Data></Cell>
+        <Cell><Data ss:Type="String">COMPLEMENTO</Data></Cell>
+        <Cell><Data ss:Type="String">REFERENCIA</Data></Cell>
+        <Cell><Data ss:Type="String">ALTO</Data></Cell>
+        <Cell><Data ss:Type="String">ANCHO</Data></Cell>
+        <Cell><Data ss:Type="String">LARGO</Data></Cell>
+        <Cell><Data ss:Type="String">CARGOEMPRESA</Data></Cell>
+        <Cell><Data ss:Type="String">VALOR</Data></Cell>
+        <Cell><Data ss:Type="String">CASILLA</Data></Cell>
+        <Cell><Data ss:Type="String">EMAIL</Data></Cell>
+        <Cell><Data ss:Type="String">CELULAR</Data></Cell>
+        <Cell><Data ss:Type="String">ENTREGAOFICINA</Data></Cell>
+        <Cell><Data ss:Type="String">INFOADICIONAL</Data></Cell>
       </Row>
     <% @orders.each do |order| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= order['id'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['number'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['payment_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['item_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['promo_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['shipment_total'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['additional_tax_total'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['currency'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['shipment_state'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['payment_state'] %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order['item_count'] %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= order['considered_risky'] %></Data></Cell>
+        <Cell><Data ss:Type="Number">3</Data></Cell>
+        <Cell><Data ss:Type="Number">3</Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['ship_city'] %></Data></Cell>
+        <Cell><Data ss:Type="Number">0.1</Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['ship_name'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['ship_address'] %></Data></Cell>
+        <Cell><Data ss:Type="Number">0</Data></Cell>
+        <Cell><Data ss:Type="Number">0</Data></Cell>
+        <Cell><Data ss:Type="String">Ref.</Data></Cell>
+        <Cell><Data ss:Type="Number">10</Data></Cell>
+        <Cell><Data ss:Type="Number">10</Data></Cell>
+        <Cell><Data ss:Type="Number">10</Data></Cell>
+        <Cell><Data ss:Type="Number"></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['shipment_total'] %></Data></Cell>
+        <Cell><Data ss:Type="String"></Data></Cell>
         <Cell><Data ss:Type="String"><%= order['email'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['ship_phone'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['special_instructions'] %></Data></Cell>
       </Row>
     <% end %>
     </Table>
