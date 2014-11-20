@@ -82,7 +82,15 @@
     <form action="<%= main_app.exportxls_url %>.xls" method="post" id="xlsform">
       <%= token_tag(nil) %>
       <input type="hidden" name="orders" />
-      <div class="fa fa-file-excel-o button" name="button_xls"> Export XLS</div>
+      <div class="alpha four columns">
+        <label><span class="fa fa-file-excel-o"></span> Export XLS</label>
+        <select class="select2" id="export_dropdown">
+          <option value></option>
+          <option value="<%= main_app.exportxls_url %>.xls">Órdenes del día</option>
+          <option value="<%= main_app.exportxls_correos_url %>.xls">Formato Correos</option>
+          <option value="<%= main_app.exportxls_chilexpress_url %>.xls">Formato Chilexpress</option>
+        </select>
+      </div>
     </form>
   </div>
 <% end %>
@@ -183,9 +191,19 @@
 <script type="text/javascript">
     var ordersJson = <%= @orders.to_json.html_safe || [] %>;
 
-  $("[name='button_xls']").click(function(){
+  $("#export_dropdown").on("select2-selecting", function(e){
     $("[name='orders']").val(JSON.stringify(ordersJson));
+
+    $('#xlsform').attr("action", e.val);
     $('#xlsform').submit();
+  });
+
+  $('.fa-void').click(function(){
+    return confirm('¿Estás seguro que quieres cancelar este pago?');
+  });
+
+  $('.fa-capture').click(function(){
+    return confirm('¿Estás seguro que quieres confirmar este pago?');
   });
 
 </script>

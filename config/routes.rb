@@ -8,6 +8,8 @@ SpreeClean::Application.routes.draw do
   mount Spree::Core::Engine, :at => '/'
   
   post '/tools/exportxls' => 'tools#export_xls', as: :exportxls
+  post '/tools/exportxls_correos' => 'tools#export_xls_correos', as: :exportxls_correos
+  post '/tools/exportxls_chilexpress' => 'tools#export_xls_chilexpress', as: :exportxls_chilexpress
           # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

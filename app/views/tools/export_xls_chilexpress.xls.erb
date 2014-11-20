@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Orders Chilexpress - La Condonería">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Number</Data></Cell>
+        <Cell><Data ss:Type="String">Payment Total</Data></Cell>
+        <Cell><Data ss:Type="String">Item Total</Data></Cell>
+        <Cell><Data ss:Type="String">Promo Total</Data></Cell>
+        <Cell><Data ss:Type="String">Total</Data></Cell>
+        <Cell><Data ss:Type="String">Shipment Total</Data></Cell>
+        <Cell><Data ss:Type="String">Additional Tax</Data></Cell>
+        <Cell><Data ss:Type="String">Currency</Data></Cell>
+        <Cell><Data ss:Type="String">Shipment State</Data></Cell>
+        <Cell><Data ss:Type="String">Payment State</Data></Cell>
+        <Cell><Data ss:Type="String">Item Count</Data></Cell>
+        <Cell><Data ss:Type="String">Considered Risky</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+      </Row>
+    <% @orders.each do |order| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= order['id'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['number'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['payment_total'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['item_total'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['promo_total'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['total'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['shipment_total'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['additional_tax_total'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['currency'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['shipment_state'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['payment_state'] %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= order['item_count'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['considered_risky'] %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order['email'] %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
