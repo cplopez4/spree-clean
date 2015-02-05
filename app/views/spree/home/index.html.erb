@@ -1,0 +1,55 @@
+<!-- Slider -->
+<div class='slider'>
+	<div class="callout flexbox">
+		<div class="text">
+			<h2>Be your professional <br>makeup artist</h2>
+			<h4><span class="hor-line"></span>antora cosmetics<span class="hor-line"></span></h4>
+			<h6>shop now</h6>
+		</div>
+	</div>
+<div class='slide'>
+  <div class='slidecontent slide1'>
+  </div>
+</div>
+<div class='slide' >
+  <div class='slidecontent slide2'>
+  </div>
+</div>
+<div class='slide' >
+  <div class='slidecontent slide2'>
+  </div>
+</div>
+</div>
+
+<!-- Shop Now -->
+<div class="shop-studio">
+	<ul>
+		<li class="flexbox">
+			<div>
+				<a href=""><span>shop now!</span></a>
+			</div>
+		</li>
+		<li class="flexbox">
+			<div>
+				<a href=""><span>beauty studio</span></a>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<!-- Ideas & Inspiration -->
+<div class="ideas-inspiration">
+	<h3>ideas & inspiration</h3>
+	<p>Nuevas propuestas, tendencias y estilos para este 2015</p>
+</div>
+
+<!-- Nuestros Favoritos -->
+<div class="favorites wrapper">
+	<h2>Nuestros Favoritos</h2>
+	<p>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
+	<ul class="prod-showdown flexbox">
+		<% cache(cache_key_for_products) do %>
+		   	<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+		<% end %>
+	</ul>
+</div>

@@ -1,0 +1,43 @@
+<!-- <header id="header" class="row" data-hook>
+  <figure id="logo" class="columns six" data-hook><%= logo %></figure>
+  <%# render :partial => 'spree/shared/nav_bar' %>
+  <%# render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+</header> -->
+
+<!-- Header -->
+<header id="header" data-hook>
+	<div class="header-top">
+		<ul>
+			<li>Enviamos sin costo a todo Chile <span class="lato">|</span></li>
+			<li><i class="fa fa-envelope-o"></i><a href="mailto:contacto@antoracosmetics.cl">contacto@antoracosmetics.cl</a>  (+56 2) 2221 3232</li>
+			<li class="lato"><a href="#">ESP</a> | <a href="">ENG   </a></li>
+		</ul>
+	</div>
+	<div class="header-bottom">
+		<ul class="bottom-content">
+			<li class="logo">
+				<%= link_to (image_tag 'logo.png', :alt => "Antora"), "/" %>
+			</li>	
+			<li>				
+				<nav>
+					<ul>
+						<li><a href="#">Bases</a></li>
+						<li><a href="#">BB Cream</a></li>
+						<li><a href="#">Lip Gloss</a></li>
+						<li><a href="#">Blush</a></li>
+						<li><a href="#">Packs</a></li>
+					</ul>
+				</nav>
+			</li>
+			<li>
+				<ul class="action-bar">
+					<li>log in</li>
+					<li>|</li>
+					<li><i class="fa fa-search"></i></li>
+					<li>|</li>
+					<li><i class="fa fa-shopping-cart"></i><span class="ammount">(2)</span></li>
+				</ul>
+			</li>
+		</div>
+	</div>
+</header>
