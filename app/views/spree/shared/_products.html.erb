@@ -1,15 +1,16 @@
 <% if products.any? %>
-    <% products.take(4).each do |product| %>
+    <% numTotal = defined?(num) ? num : Spree::Product.all.length %>
+    <% products.take(numTotal).each do |product| %>
       
       <% url = product_url(product, :taxon_id => @taxon.try(:id)) %>
       
       <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
         <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
-          <%= link_to small_image(product, :itemprop => "image"), url, :itemprop => 'url', :class => 'favorites-img' %>
+          <%= link_to product_image(product, :itemprop => "image"), url, :itemprop => 'url', :class => 'favorites-img' %>
           <p><small>Top Rated</small></p>
           <h6><%= truncate(product.name, :length => 50) %></h6>
           <i>Pressed Mineral</i>
-          <p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
+          <p class="desc"><%= truncate(product.description, :length => 100, :separator => ' ') %></p>
           <span itemprop="price"><%= display_price(product) %></span>
           <a href="#">buy me</a>
         <% end %>

@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= link_to "Editando a #{@artist.first_name} #{@artist.last_name}", edit_admin_artist_url(@artist) %>
+<% end %>
+
+<fieldset data-hook="admin_artist_edit_general_settings" class="alpha twelve columns">
+  <legend><%= Spree.t(:general_settings) %></legend>
+
+  <div data-hook="admin_artist_edit_form">
+    <%= form_for [:admin, @artist], as: :artist, url: admin_artist_url(@artist), method: :put do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+
+      <div data-hook="admin_artist_edit_form_button">
+        <%= render :partial => 'spree/admin/shared/edit_resource_links', :locals => { :collection_url => admin_artists_url } %>
+      </div>
+    <% end %>
+  </div>
+</fieldset>

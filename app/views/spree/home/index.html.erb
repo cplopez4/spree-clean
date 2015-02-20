@@ -4,7 +4,7 @@
 		<div class="text">
 			<h2>Be your professional <br>makeup artist</h2>
 			<h4><span class="hor-line"></span>antora cosmetics<span class="hor-line"></span></h4>
-			<h6>shop now</h6>
+			<h6><a href="/products">shop now</a></h6>
 		</div>
 	</div>
 <div class='slide'>
@@ -26,12 +26,12 @@
 	<ul>
 		<li class="flexbox">
 			<div>
-				<a href=""><span>shop now!</span></a>
+				<a href="/products"><span>shop now!</span></a>
 			</div>
 		</li>
 		<li class="flexbox">
 			<div>
-				<a href=""><span>beauty studio</span></a>
+				<a href="/studio"><span>beauty studio</span></a>
 			</div>
 		</li>
 	</ul>
@@ -49,7 +49,7 @@
 	<p>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
 	<ul class="prod-showdown flexbox">
 		<% cache(cache_key_for_products) do %>
-		   	<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+		   	<%= render :partial => 'spree/shared/products', :locals => { :products => @products, :num => 4 } %>
 		<% end %>
 	</ul>
 </div>

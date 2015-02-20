@@ -1,0 +1,72 @@
+<div data-hook="admin_artist_form_fields" class="row">
+  <div class="alpha six columns">
+    <%= f.field_container :email do %>
+      <%= f.label :email, Spree.t(:email) %>
+      <%= f.email_field :email, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :email %>
+    <% end %>
+
+    <%= f.field_container :first_name do %>
+      <%= f.label :first_name, Spree.t(:first_name) %>
+      <%= f.text_field :first_name, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :first_name %>
+    <% end %>
+
+    <%= f.field_container :last_name do %>
+      <%= f.label :last_name, Spree.t(:last_name) %>
+      <%= f.text_field :last_name, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :last_name %>
+    <% end %>
+
+    <%= f.field_container :facebook do %>
+      <%= f.label :facebook, Spree.t(:facebook) %>
+      <%= f.text_field :facebook, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :facebook %>
+    <% end %>
+
+    <%= f.field_container :pinterest do %>
+      <%= f.label :pinterest, Spree.t(:pinterest) %>
+      <%= f.text_field :pinterest, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :pinterest %>
+    <% end %>
+
+    <%= f.field_container :instagram do %>
+      <%= f.label :instagram, Spree.t(:instagram) %>
+      <%= f.text_field :instagram, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :instagram %>
+    <% end %>
+
+    <%= f.field_container :twitter do %>
+      <%= f.label :twitter, Spree.t(:twitter) %>
+      <%= f.text_field :twitter, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :twitter %>
+    <% end %>
+
+    <%= f.field_container :youtube do %>
+      <%= f.label :youtube, Spree.t(:youtube) %>
+      <%= f.text_field :youtube, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :youtube %>
+    <% end %>
+
+  </div>
+
+  <div class="omega six columns">
+    <%= f.field_container :link do %>
+      <%= f.label :link, Spree.t(:link) %>
+      <%= f.text_field :link, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :link %>
+    <% end %>
+
+    <%= f.field_container :book_url do %>
+      <%= f.label :book_url, Spree.t(:book_url) %>
+      <%= f.text_field :book_url, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :book_url %>
+    <% end %>
+
+    <%= f.field_container :description do %>
+      <%= f.label :description, Spree.t(:description) %>
+      <%= f.text_area :description, :class => 'fullwidth' %>
+      <%= error_message_on :artist, :description %>
+    <% end %>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 		<ul>
 			<li>Enviamos sin costo a todo Chile <span class="lato">|</span></li>
 			<li><i class="fa fa-envelope-o"></i><a href="mailto:contacto@antoracosmetics.cl">contacto@antoracosmetics.cl</a>  (+56 2) 2221 3232</li>
-			<li class="lato"><a href="#">ESP</a> | <a href="">ENG   </a></li>
+			<li class="lato lato-lang"><a href="#">ESP</a> | <a href="">ENG   </a></li>
 		</ul>
 	</div>
 	<div class="header-bottom">
@@ -31,13 +31,14 @@
 			</li>
 			<li>
 				<ul class="action-bar">
-					<li>log in</li>
+					<li><a href="/login">log in</a></li>
 					<li>|</li>
 					<li><i class="fa fa-search"></i></li>
 					<li>|</li>
-					<li><i class="fa fa-shopping-cart"></i><span class="ammount">(2)</span></li>
+					<li><a href="/cart"><i class="fa fa-shopping-cart"></i><span class="ammount">(2)</span></a></li>
 				</ul>
 			</li>
 		</div>
 	</div>
+	<script>Spree.fetch_cart()</script>
 </header>

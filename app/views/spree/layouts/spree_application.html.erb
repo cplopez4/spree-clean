@@ -15,8 +15,10 @@
 
     <%# render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
-    <%= flash_messages %>
-    <%= yield %>
+    <%# flash_messages %>
+    <div class="custom-container">
+      <%= yield %>
+    </div>
 
     <%= yield :templates %>
 

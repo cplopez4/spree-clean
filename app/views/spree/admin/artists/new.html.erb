@@ -1,0 +1,19 @@
+<% content_for :page_title do %>
+  <%= Spree.t('Nueva Maquilladora') %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t('volver al listado'), spree.admin_artists_path, :icon => 'arrow-left' %>
+  </li>
+<% end %>
+
+<div data-hook="admin_artist_new_form">
+  <%= form_for [:admin, @artist], url: admin_artists_url, method: :post do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div data-hook="admin_artist_new_form_buttons">
+      <%= render :partial => 'spree/admin/shared/new_resource_links' %>
+    </div>
+  <% end %>
+</div>

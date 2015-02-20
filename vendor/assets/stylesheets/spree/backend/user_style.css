@@ -4,3 +4,6 @@
 div.fa-file-excel-o{
 	cursor: pointer;
 }
+#admin-menu li a span.text{
+	font-size: 11px;
+}

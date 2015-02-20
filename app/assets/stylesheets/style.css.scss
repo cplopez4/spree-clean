@@ -18,6 +18,28 @@ h1, h2, h3, h4, h5, h6, .lato {
 	line-height: normal !important;
 }
 
+.lato.lato-lang{
+	line-height: 52px !important;
+}
+
+.book-me a:hover{
+	color: white;
+}
+
+.fb-facepile{
+	margin-left: 90px;
+}
+
+.m-bot-30{
+	margin-bottom: 30px !important;
+}
+
+.slideme_container button.arrow{
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+}
+
 body {font-family: 'Cardo', serif; line-height: normal !important;}
 
 .flexbox {
@@ -350,7 +372,7 @@ nav li {
 }
 
 .prod-showdown img {
-		margin-bottom: 45px;
+		margin-bottom: 10px;
 }
 
 .prod-showdown small {
@@ -395,7 +417,7 @@ nav li {
 	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
 	font-weight: 400;
-	font-size: 12px;
+	font-size: 11px;
 	color: #df1f39;
 	border-bottom: 1px solid;
 	display: inline-block;
@@ -404,7 +426,7 @@ nav li {
 }
 
 .prod-showdown a:hover {
-	font-weight: 600;
+	/*font-weight: 600;*/
 	border-bottom-width: 2px;
 	margin-bottom: 19px;
 	color: #bf1134;
@@ -501,6 +523,9 @@ footer .copyright {
 	line-height: 18px;
 }
 
+a.envelope-link:hover {
+	color: white;
+}
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
     color: white;
@@ -737,7 +762,7 @@ a.website {
 .social-feed h6 {
 	text-align: left;
 	font-size: 10px;
-	line-height: 35px;
+	line-height: 35px !important;
 	color: #c5beb2;
 	letter-spacing: .2em;
 	font-weight: 400;
@@ -789,4 +814,3 @@ a.website {
 	padding-top: 14px;
 	padding-bottom: 20px;
 }
-

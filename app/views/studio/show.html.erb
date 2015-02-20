@@ -1,0 +1,111 @@
+<!-- FACEBOOK PLUGIN -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- PAGE CONTENT -->
+<div class="wrapper">
+	<div class="page-content-top">
+		<ul class="makeup-artist">
+			<li>
+				<div class="profile">
+					<div class="img-container">
+						<%= image_tag 'big.jpg', :alt => '' %>
+					</div>
+					<h3>NOTORIOUS B.I.G.</h3>
+					<div class="divider"></div>
+					<ul class="social-media">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+					</ul>
+					<p>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí.<br>Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja longi ñecla. Hilo curado rayuela carrete quina guagua lorea piola ni ahí. Lorem ipsum dolor sit cuchuflí barquillo bacán jote gamba listeilor po cahuín, luca melón con vino pichanga coscacho ni ahí peinar la muñeca chuchada al chancho achoclonar. Chorrocientos pituto ubicatex huevo duro bolsero cachureo el hoyo del queque en cana huevón el año del loly hacerla corta impeque de miedo quilterry la raja.</p>
+					<a class="website" href="#">www.notoriousbig.com</a>
+					<div class="book-me"><a href="#">book me</a></div>
+				</div>
+			</li>
+			<li>
+				<div id="img-gallery">
+					<ul class="slideme">
+						<li><%= image_tag 'placeholder.jpg' %></li>
+						<li><%= image_tag 'placeholder.jpg' %></li>
+						<li><%= image_tag 'placeholder.jpg' %></li>
+						<li><%= image_tag 'placeholder.jpg' %></li>
+						<li><%= image_tag 'placeholder.jpg' %></li>
+					</ul>
+				</div>
+				<div class="social-feed">
+					<ul>
+						<li>
+							<h6>Instagram</h6>
+							<ul class="bottom">
+								<li  class="feed-img">
+									<%= image_tag 'snoopy.jpg' %>
+								</li>
+								<li>
+									<p>"Night Pary" work in progress con el talentoso fotógrafo <i>@diegocorrea</i> y <i>@camilafanzani</i></p>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6>Blog</h6>
+							<ul class="bottom">
+								<li  class="feed-img">
+									<%= image_tag 'snoopy2.jpg' %>
+								</li>
+								<li>
+									<p>"Night Pary" work in progress con el talentoso fotógrafo <i>@diegocorrea</i> y <i>@camilafanzani</i></p>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6>twitter</h6>
+							<p>RT <i>@halconmatinal:</i> Muy buen día,con el doctor Arellano hablaremos de los ronquidos. preguntas?</p>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="page-content-bottom">
+		<ul class="mis-cosas">
+			
+			<li>
+				<h3>
+					<small>Mis</small><br>
+					<span class="hor-line"></span>FAVORITOS<span class="hor-line"></span>
+				</h3>
+				<ul class="prod-showdown favs-showdown flexbox">
+					<%= render :partial => 'spree/shared/products_fixed', :locals => { :products => @products, :num => 3 } %>
+				</ul>
+			</li>
+
+			<li>
+				<h3 class="m-bot-30">
+					<small>Mis</small><br>
+					<span class="hor-line"></span>FANS<span class="hor-line"></span>
+				</h3>
+				<div class="fb-facepile" data-href="https://www.facebook.com/FacebookDevelopers" data-width="340" data-height="240" data-max-rows="4" data-colorscheme="light" data-size="large" data-show-count="true"></div>
+			</li>
+
+		</ul>
+	</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$('#img-gallery').slideme({
+			arrows: true,
+			pagination: "numbers",
+			resizable: {
+				width: 510,
+				height: 444,
+			}
+		});
+	});
+</script>

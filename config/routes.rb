@@ -7,10 +7,21 @@ SpreeClean::Application.routes.draw do
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
   
+  Spree::Core::Engine.routes.draw do
+    namespace :admin do
+      resources :artists
+    end
+  end
+
   post '/tools/exportxls' => 'tools#export_xls', as: :exportxls
   post '/tools/exportxls_correos' => 'tools#export_xls_correos', as: :exportxls_correos
   post '/tools/exportxls_chilexpress' => 'tools#export_xls_chilexpress', as: :exportxls_chilexpress
-          # The priority is based upon order of creation: first created -> highest priority.
+
+  get '/studio' => 'studio#index', as: :studio
+  get '/studio/:id' => 'studio#show', as: :studio_show
+
+
+  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
