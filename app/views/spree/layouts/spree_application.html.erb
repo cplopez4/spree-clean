@@ -16,9 +16,13 @@
     <%# render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
     <%# flash_messages %>
-    <div class="custom-container">
+    <% if params[:controller] == 'spree/user_sessions' || params[:controller] == 'spree/user_registrations' || params[:controller] == 'spree/user_passwords'%>
+      <div class="custom-container">
+        <%= yield %>
+      </div>
+    <% else %>
       <%= yield %>
-    </div>
+    <% end %>
 
     <%= yield :templates %>
 

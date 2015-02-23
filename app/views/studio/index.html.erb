@@ -9,80 +9,20 @@
 		<small>The</small><br>
 		<span class="hor-line"></span>BEAUTY STUDIO<span class="hor-line"></span>
 	</h3>
-	<ul class="prod-showdown beauty-showdown flexbox">
-		<li>
-			<div class="img-container">
-				<%= image_tag 'pac.jpg' %>
-			</div>
-			<h6>Tupac Shakur</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-		<li>
-			<div class="img-container">
-				<%= image_tag 'big.jpg' %>
-			</div>
-			<h6>Notorious B.I.G.</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-		<li>
-			<div class="img-container">
-				<%= image_tag 'dre.jpg' %>
-			</div>
-			<h6>dr. dre</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-		<li>
-			<div class="img-container">
-				<%= image_tag 'mosdef.jpg' %>
-			</div>
-			<h6>Mos Def</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-	</ul>
-	<ul class="prod-showdown beauty-showdown flexbox">
-		<li>
-			<div class="img-container">
-				<%= image_tag 'icecube.jpg' %>
-			</div>
-			<h6>Ice Cube</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-		<li>
-			<div class="img-container">
-				<%= image_tag 'mobbdeep.jpg' %>
-			</div>
-			<h6>Mobb deep</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-		<li>
-			<div class="img-container">
-				<%= image_tag 'murda.jpg' %>
-			</div>
-			<h6>uncle murda</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-		<li>
-			<div class="img-container">
-				<%= image_tag 'xzibit.jpg' %>
-			</div>
-			<h6>xzibit dawg</h6>
-			<div class="divider"></div>
-			<p class="desc">Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...<br>Magna aliquam erat volutpat, ut wisi enim ad minim veniam quis nostrud! Vel illum dolore eu, feugiat nulla facilisis at vero...</p>
-			<a href="#">leer más</a>
-		</li>
-	</ul>
+
+	<% @artists.each_slice(4) do |slice| %>
+		<ul class="prod-showdown beauty-showdown flexbox">
+			<% slice.each do |artist| %>
+				<li>
+					<div class="img-container">
+						<%= image_tag 'pac.jpg' %>
+					</div>
+					<h6><%= artist.full_name %></h6>
+					<div class="divider"></div>
+					<p class="desc"><%= truncate(artist.description, :length => 100, :separator => ' ') %></p>
+					<%= link_to 'read +', '/studio/' + artist.id.to_s %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
 </div>

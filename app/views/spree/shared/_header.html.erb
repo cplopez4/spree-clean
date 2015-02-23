@@ -31,7 +31,25 @@
 			</li>
 			<li>
 				<ul class="action-bar">
-					<li><a href="/login">log in</a></li>
+					<% if spree_current_user %>
+					  <% if spree_current_user.has_spree_role?("admin") %>
+					  	<li>
+					    	<%= link_to'admin', '/admin' %>
+					 	</li>
+					 	<li>|</li>
+					  <% end %>
+					  <li>
+					    <%= link_to'logout', spree_logout_path, :method => :delete %>
+					  </li>
+					<% else %>
+					  <li>
+					    <%= link_to 'login', spree_login_path %>
+					  </li>
+					  <li>|</li>
+					  <li>
+					    <%= link_to 'register', spree_signup_path %>
+					  </li>
+					<% end %>
 					<li>|</li>
 					<li><i class="fa fa-search"></i></li>
 					<li>|</li>
