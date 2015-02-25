@@ -21,11 +21,7 @@
 			<li>				
 				<nav>
 					<ul>
-						<li><a href="#">Bases</a></li>
-						<li><a href="#">BB Cream</a></li>
-						<li><a href="#">Lip Gloss</a></li>
-						<li><a href="#">Blush</a></li>
-						<li><a href="#">Packs</a></li>
+						<%= render :partial => 'spree/shared/taxonomies' %>
 					</ul>
 				</nav>
 			</li>
@@ -53,7 +49,7 @@
 					<li>|</li>
 					<li><i class="fa fa-search"></i></li>
 					<li>|</li>
-					<li><a href="/cart"><i class="fa fa-shopping-cart"></i><span class="ammount">(0)</span></a></li>
+					<li id="link-to-cart"></li>
 				</ul>
 			</li>
 		</div>

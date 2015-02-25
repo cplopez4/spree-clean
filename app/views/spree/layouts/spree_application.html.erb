@@ -11,12 +11,10 @@
 
     <%= render :partial => 'spree/shared/header' %>
 
-    <%= breadcrumbs(@taxon) %>
-
     <%# render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
     <%# flash_messages %>
-    <% if params[:controller] == 'spree/user_sessions' || params[:controller] == 'spree/user_registrations' || params[:controller] == 'spree/user_passwords'%>
+    <% if params[:controller] == 'spree/user_sessions' || params[:controller] == 'spree/user_registrations' || params[:controller] == 'spree/user_passwords' || params[:controller] == 'spree/orders' || params[:controller] == 'spree/checkout' %>
       <div class="custom-container">
         <%= yield %>
       </div>
