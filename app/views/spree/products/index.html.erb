@@ -20,11 +20,13 @@
     <div class="favorites wrapper">
       <h2>Our Products</h2>
       <p>The best products of the market, for you only from Antora</p>
-      <ul class="prod-showdown flexbox">
-        <% cache(cache_key_for_products) do %>
-            <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
-        <% end %>
-      </ul>
+      <% @products.each_slice(4) do |slice| %>
+        <ul class="prod-showdown flexbox">
+          <% cache(cache_key_for_products) do %>
+            <%= render :partial => 'spree/shared/products', :locals => { :products => slice, :taxon => @taxon } %>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
 
   <% end %>

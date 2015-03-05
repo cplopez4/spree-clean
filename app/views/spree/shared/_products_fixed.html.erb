@@ -9,7 +9,7 @@
         <h6><%= truncate(product.name, :length => 50) %></h6>
         <div class="divider"></div>
         <span itemprop="price"><%= display_price(product) %></span>
-        <a href="#">buy me</a>
+        <%= link_to 'buy me', url %>
       </li>
 
     <% end %>

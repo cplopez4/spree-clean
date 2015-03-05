@@ -1,56 +1,45 @@
-<% cache [I18n.locale, current_currency, @product] do %>
-  <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
-    <% @body_id = 'product-details' %>
-
-    <div class="columns six alpha" data-hook="product_left_part">
-      <div class="row" data-hook="product_left_part_wrap">
-
-        <div id="product-images" data-hook="product_images">
-          <div id="main-image" data-hook>
+<!-- PAGE CONTENT -->
+<div class="wrapper">
+  <div class="page-content-top">
+    <ul class="makeup-artist product-detail">
+      <li>
+        <div class="profile">
+          <div class="img-container product-show" id="product-images" data-hook="product_images">
             <%= render :partial => 'image' %>
           </div>
-          <div id="thumbnails" data-hook>
-            <%= render :partial => 'thumbnails' %>
-          </div>
+          <h3><%= accurate_title %></h3>
+          <div class="divider"></div>
+          <p><%= product_description(@product) rescue Spree.t('No hay descripción disponible') %></p>
+          <%# link_to @artist.link, @artist.link, :target => "_blank", :class => "website" %>
+          <%= render :partial => 'cart_form', :locals => { :product => @product } %>
         </div>
-
-        <div data-hook="product_properties">
-          <%= render :partial => 'properties' %>
+      </li>
+      <li>
+        <div id="thumbnails" data-hook>
+          <%= render :partial => 'thumbnails' %>
         </div>
-
-        <div data-hook="promotions">
-          <%= render :partial => 'promotions' %>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="columns ten omega" data-hook="product_right_part">
-      <div class="row" data-hook="product_right_part_wrap">
-
-        <div id="product-description" data-hook="product_description">
-
-          <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
-
-          <div itemprop="description" data-hook="description">
-            <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
-          </div>
-
-          <div id="cart-form" data-hook="cart_form">
-            <%= render :partial => 'cart_form' %>
-          </div>
-
+        <div class="social-feed">
           <div id="disqus_thread"></div>
-
         </div>
-
-        <%= render :partial => 'taxons' %>
-
-      </div>
-    </div>
-
+      </li>
+    </ul>
   </div>
-<% end %>
+  <div class="page-content-bottom">
+    <ul class="mis-cosas product-detail">
+      
+      <li>
+        <h3>
+          <small>Más</small><br>
+          <span class="hor-line"></span>PRODUCTOS<span class="hor-line"></span>
+        </h3>
+        <ul class="prod-showdown favs-showdown flexbox">
+          <%= render :partial => 'spree/shared/products_fixed', :locals => { :products => @products, :num => 3 } %>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</div>
 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

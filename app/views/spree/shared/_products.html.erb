@@ -12,7 +12,6 @@
           <i>Pressed Mineral</i>
           <p class="desc"><%= truncate(product.description, :length => 100, :separator => ' ') %></p>
           <span itemprop="price"><%= display_price(product) %></span>
-          <a href="#">buy me</a>
 
           <div id="cart-form" data-hook="cart_form">
             <%= render :partial => '/spree/products/cart_form', :locals => { :product => product } %>

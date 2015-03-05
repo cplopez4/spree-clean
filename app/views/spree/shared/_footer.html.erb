@@ -2,11 +2,12 @@
 <footer>
 	<div class="footer-top">
 		<ul class="flist">
-			<li>contact</li>
-			<li>about us</li>
-			<li>terms & conditions</li>
-			<li>faq</li>
-			<li>shipping information</li>
+			<li><%= link_to 'contact', '#' %></li>
+			<li><%= link_to 'about us', '#' %></li>
+			<li><%= link_to 'terms & conditions', '#' %></li>
+			<li><%= link_to 'faq', '#' %></li>
+			<li><%= link_to 'shipping information', '#' %></li>
+			<li><a href="/blog">blog</a></li>
 		</ul>
 		<ul class="social-media">
 			<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
@@ -15,11 +16,18 @@
 			<li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
 		</ul>
 	</div>
-	<form>
+	<form action="//lacondoneria.us1.list-manage.com/subscribe/post?u=f0e9fb5528531bfe1d705bb86&amp;id=a1a31a0b28" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 		<span>NEWSLETTER</span>
-		<input type="text" placeholder="Sign up for updates, news, events and more" />
-		<div class="button"><a class="envelope-link" href="#"><i class="fa fa-envelope-o"></i></a></div>		
+		<input type="email" placeholder="Sign up for updates, news, events and more" name="EMAIL" id="mce-EMAIL" />
+		<input type="hidden" value="" name="FNAME" id="mce-FNAME">
+		<input type="hidden" value="" name="LNAME" id="mce-LNAME">
+		<div style="position: absolute; left: -5000px;">
+	    	<input type="text" name="b_f0e9fb5528531bfe1d705bb86_a1a31a0b28" tabindex="-1" value="">
+	    </div>
+		<button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"><a class="envelope-link" href="javascript:void(0);"><i class="fa fa-envelope-o"></i></a></button>		
+		<div class="response" id="mce-success-response" style="display:none"></div>
 	</form>
+
 	<div class="copyright">
 		<p>Antora 2014 All rights reserved<br>Diseño Fábrica DG </p>
 	</div>
@@ -29,4 +37,7 @@
 	$(document).ready(function(){
 		$(".slider").simpleSlider();
 	});
+</script>
+
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
 </script>
