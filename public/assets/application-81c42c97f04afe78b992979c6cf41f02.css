@@ -1,0 +1,1463 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/* line 1, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 12, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container ul,
+.slideme_container ol,
+.slideme {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 18, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container li,
+.slideme > li {
+  display: block;
+  list-style: none;
+}
+
+/* line 24, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container,
+.slideme {
+  position: relative;
+}
+
+/* line 28, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme {
+  overflow: hidden;
+}
+
+/* line 33, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container ol img,
+.slideme > * img {
+  display: block;
+}
+
+/* line 37, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme > *:first-child {
+  opacity: 1;
+  position: relative;
+  z-index: 5;
+}
+
+/* line 44, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme > *,
+.slideme_container .slideme > * {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+/* line 53, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme > * {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 61, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container .slideme > *.current {
+  opacity: 1;
+  z-index: 5;
+}
+
+/* line 68, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.single button.arrow,
+.single .pagination {
+  display: none;
+}
+
+/*
+ * slide
+ */
+/* line 77, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide > *,
+.slideme_container .slideme-slide > * {
+  visibility: hidden;
+  z-index: 0;
+}
+
+/* line 83, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide > .current,
+.slideme-slide > .next {
+  visibility: visible;
+  z-index: 5;
+}
+
+/* line 88, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide > .after {
+  left: 100%;
+}
+
+/* line 92, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide > .before {
+  left: -100%;
+}
+
+/* line 99, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide.nextClicked > .current,
+.slideme-slide.nextClicked > .next,
+.slideme-slide.prevClicked > .current,
+.slideme-slide.prevClicked > .next {
+  -webkit-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+/* line 108, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide.prevClicked > .next,
+.slideme-slide.nextClicked > .next {
+  left: 0;
+}
+
+/* line 112, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide.prevClicked > .current {
+  left: 100%;
+}
+
+/* line 116, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-slide.nextClicked > .current {
+  left: -100%;
+}
+
+/*
+ * zoom
+ */
+/* line 125, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom > *,
+.slideme_container .slideme-zoom > * {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* line 130, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom > .current {
+  visibility: visible;
+  z-index: 4;
+}
+
+/* line 135, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom > .next {
+  visibility: visible;
+  z-index: 5;
+}
+
+/* line 141, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom > .before,
+.slideme-zoom.nextClicked > .current {
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
+/* line 151, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom > .after,
+.slideme-zoom.nextClicked > .next,
+.slideme-zoom.prevClicked > .current {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  z-index: 5;
+}
+
+/* line 160, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom > .before {
+  z-index: 6;
+}
+
+/* line 167, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom.nextClicked > .current,
+.slideme-zoom.nextClicked > .next,
+.slideme-zoom.prevClicked > .current,
+.slideme-zoom.prevClicked > .next {
+  -webkit-transition: opacity 0.35s cubic-bezier(0.47, 0, 0.745, 0.715), -webkit-transform 0.35s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: opacity 0.35s cubic-bezier(0.47, 0, 0.745, 0.715), -moz-transform 0.35s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition: opacity 0.35s cubic-bezier(0.47, 0, 0.745, 0.715), -ms-transform 0.35s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: opacity 0.35s cubic-bezier(0.47, 0, 0.745, 0.715), -o-transform 0.35s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: opacity 0.35s cubic-bezier(0.47, 0, 0.745, 0.715), transform 0.35s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+/* line 175, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom.nextClicked > .current {
+  opacity: 0;
+}
+
+/* line 179, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom.nextClicked > .after {
+  opacity: 1;
+}
+
+/* line 183, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-zoom.prevClicked > .next {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/*
+ * fade
+ */
+/* line 198, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-fade > *,
+.slideme_container .slideme-fade > * {
+  opacity: 0;
+  z-index: 0;
+}
+
+/* line 206, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-fade.nextClicked > .current,
+.slideme-fade.nextClicked > .next,
+.slideme-fade.prevClicked > .current,
+.slideme-fade.prevClicked > .next {
+  -webkit-transition: opacity 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: opacity 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition: opacity 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: opacity 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: opacity 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+/* line 215, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-fade.nextClicked > .current,
+.slideme-fade.prevClicked > .current {
+  opacity: 0;
+  z-index: 5;
+}
+
+/* line 221, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-fade.nextClicked > .next,
+.slideme-fade.prevClicked > .next {
+  opacity: 1;
+  z-index: 4;
+}
+
+/*
+ * page
+ */
+/* line 230, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-page > .current {
+  visibility: visible;
+  z-index: 4;
+}
+
+/* line 235, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-page > .next {
+  visibility: visible;
+  z-index: 6;
+}
+
+/* line 240, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-page > .after {
+  left: 100%;
+}
+
+/* line 244, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-page > .before {
+  left: -100%;
+}
+
+/* line 249, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-page.nextClicked > .current,
+.slideme-page.prevClicked > .current {
+  -webkit-transition: visibility 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: visibility 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition: visibility 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: visibility 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: visibility 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  visibility: hidden;
+}
+
+/* line 259, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-page.nextClicked > .next,
+.slideme-page.prevClicked > .next {
+  -webkit-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -ms-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -o-transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: left 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+  left: 0;
+}
+
+/*
+ *  SLIDEME TOUCH
+ */
+/* line 272, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-touch {
+  -webkit-overflow-scrolling: touch;
+  font-size: 0;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* line 283, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme-touch.snapping {
+  overflow-x: hidden;
+}
+
+/* line 287, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container .slideme-touch > * {
+  -webkit-transform: translateZ(0px);
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+/* line 295, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme_container .slideme-touch > * img {
+  display: block;
+  min-height: 1px;
+  min-width: 1px;
+  width: 100%;
+}
+
+/* OTHER */
+/* line 304, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.slideme {
+  max-width: 510px;
+  max-height: 444px;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 311, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+button.prev {
+  background-position: 0 0;
+  left: 20px;
+  padding-left: 40px;
+  background: url(/assets/arrow-left.png) 0 0 no-repeat;
+}
+
+/* line 318, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+button.next {
+  background-position: 0 0;
+  right: 20px;
+  padding-right: 40px;
+  background: url(/assets/arrow-right.png) 0 0 no-repeat;
+}
+
+/* line 325, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+button.arrow {
+  border: none;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 38px;
+  line-height: 20px;
+  margin: 0;
+  margin-top: -10px;
+  padding: 0;
+  position: absolute;
+  text-transform: uppercase;
+  top: 80%;
+  z-index: 20;
+}
+
+/* line 341, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+button.arrow:focus {
+  outline: none;
+}
+
+/* line 345, /home/cplopez4/spree-clean/app/assets/stylesheets/slideme.css.scss */
+.numbers {
+  display: none;
+}
+/******************************************/
+/************* GENERAL & HOME *************/
+/******************************************/
+/* line 9, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 10, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+ul {
+  overflow: hidden;
+}
+
+/* line 11, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+ul > li {
+  float: left;
+}
+
+/* line 12, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 13, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+h1, h2, h3, h4, h5, h6, .lato {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  line-height: normal !important;
+}
+
+/* line 22, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-top-fix {
+  margin-top: 95px !important;
+}
+
+/* line 26, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.lato.lato-lang {
+  line-height: 52px !important;
+}
+
+/* line 30, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.book-me a:hover {
+  color: white;
+}
+
+/* line 34, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist .img-container.product-show {
+  border-radius: initial;
+}
+
+/* line 38, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist.product-detail > li {
+  width: 100%;
+}
+
+/* line 42, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.mis-cosas.product-detail > li {
+  width: 100%;
+}
+
+/* line 46, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#product-price {
+  display: none;
+}
+
+/* line 50, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+span.price.selling {
+  display: none;
+}
+
+/* line 54, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+span[itemprop='priceCurrency'] {
+  display: none;
+}
+
+/* line 58, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#mce-EMAIL {
+  color: white;
+}
+
+/* line 62, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#mc-embedded-subscribe.button {
+  margin: 0px;
+  clear: none;
+  padding: 0px;
+  border: none;
+}
+
+/* line 69, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#add-to-cart-button {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 11px;
+  color: #df1f39;
+  border: none;
+  text-decoration: underline;
+  display: inline-block;
+  letter-spacing: .1em;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+/* line 83, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.add-to-cart input[type="number"] {
+  width: 55px !important;
+}
+
+/* line 87, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#add-to-cart-button:hover {
+  border-bottom-width: 2px;
+  margin-bottom: 19px;
+  color: #bf1134;
+}
+
+/* line 93, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.fb-facepile {
+  margin-left: 90px;
+}
+
+/* line 97, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.m-bot-30 {
+  margin-bottom: 30px !important;
+}
+
+/* line 101, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.p-top-40 {
+  padding-top: 40px !important;
+}
+
+/* line 105, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.custom-container {
+  margin-top: 95px;
+}
+
+/* line 109, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+h6 a.name-link {
+  color: #df1f39 !important;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: .15em;
+  border: none;
+  display: block;
+  margin-top: 0px !important;
+}
+
+/* line 119, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+h6 a.name-link:hover {
+  color: #bf1134 !important;
+}
+
+/* line 123, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.slideme_container button.arrow {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* line 129, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+body {
+  font-family: 'Cardo', serif;
+  line-height: normal !important;
+}
+
+/* line 131, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 139, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.wrapper {
+  width: 1020px;
+  overflow: hidden;
+  margin: auto;
+}
+
+/* HEADER */
+/* line 147, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+header {
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding-right: 30px;
+  z-index: 100;
+}
+
+/* line 158, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-top ul, .bottom-content {
+  margin-right: 30px;
+  margin-left: 40px;
+}
+
+/* line 163, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-top {
+  text-align: right;
+  width: 100%;
+  overflow: hidden;
+  height: 30px;
+  font-family: 'Cardo', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13px;
+  padding-bottom: 1px;
+}
+
+/* line 175, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-top ul {
+  float: right;
+  line-height: 52px;
+}
+
+/* line 179, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-top ul li:last-child {
+  margin-left: 24px;
+}
+
+/* line 183, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-top .fa {
+  margin: 0 12px;
+}
+
+/* line 187, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.header-bottom {
+  margin-top: -3px;
+  padding-bottom: 27px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: .1em;
+}
+
+/* line 195, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.bottom-content > li {
+  width: 33.3333%;
+}
+
+/* line 198, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.logo img {
+  width: 182px;
+  height: auto;
+  display: block;
+}
+
+/* line 204, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+nav {
+  text-transform: uppercase;
+  width: 420px;
+  margin: 25px auto 0;
+}
+
+/* line 210, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+nav li {
+  margin: 0 15px;
+}
+
+/* line 214, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.action-bar {
+  margin-top: 22px;
+  float: right;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: normal;
+}
+
+/* line 222, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.action-bar li {
+  margin: 0 6px;
+}
+
+/* line 225, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.action-bar li:last-child {
+  margin-right: 0;
+}
+
+/* line 228, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.ammount {
+  margin-left: 6px;
+}
+
+/* Slide */
+/* line 234, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.slider {
+  width: 100%;
+  height: 517px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 241, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.callout {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+/* line 247, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.slide {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  float: left;
+  position: absolute;
+}
+
+/* line 256, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.slidecontent {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+/* line 262, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.slide1 {
+  background-image: url(/assets/slider1.jpg);
+}
+
+/* line 265, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.slide2 {
+  background-image: url(/assets/slider2.jpg);
+}
+
+/* line 269, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#slideposition {
+  position: relative;
+  margin-top: -31px;
+  width: auto;
+  z-index: 10;
+  padding-bottom: 10px;
+}
+
+/* line 277, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#slideposition ul {
+  width: 64px;
+  margin: auto;
+}
+
+/* line 282, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#slideposition .indicator {
+  height: 9px;
+  width: 9px;
+  background: white;
+  border-radius: 50%;
+  opacity: .4;
+  margin: 6px;
+  float: left;
+}
+
+/* line 292, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+#slideposition .indicator.active {
+  opacity: 1;
+}
+
+/* line 296, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.callout .text {
+  color: #dddddd !important;
+  margin: auto;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: .1em !important;
+}
+
+/* line 306, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.callout h2 {
+  font-family: 'Gentium Book Basic', serif;
+  color: #dddddd !important;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 60px;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 160px;
+}
+
+/* line 317, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.hor-line {
+  background: rgba(255, 255, 255, 0.4);
+  width: 30px;
+  height: 2px;
+  display: inline-block;
+  margin: 4px 15px;
+}
+
+/* line 325, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.callout h4 {
+  color: #dddddd !important;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+/* line 330, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.callout h6 {
+  color: #dddddd !important;
+  font-size: 12px;
+  margin: 60px auto 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  width: 80px;
+}
+
+/* SHOP NOW - BEAUTY STUDIO */
+/* line 340, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio {
+  overflow: hidden;
+}
+
+/* line 344, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li {
+  padding: 7% 0;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+
+/* line 353, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li:hover {
+  opacity: .5;
+}
+
+/* line 357, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li div {
+  margin: auto;
+}
+
+/* line 361, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li a {
+  background-repeat: no-repeat;
+  padding: 30px 70px;
+  margin: auto;
+  background-position: center;
+  display: block;
+  text-align: center;
+}
+
+/* line 370, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li:first-child {
+  background-image: url(/assets/shop_now.jpg);
+}
+
+/* line 374, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li:last-child {
+  background-image: url(/assets/girl.jpg);
+}
+
+/* line 378, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li:first-child a {
+  background-image: url(/assets/paint1.png);
+}
+
+/* line 382, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio li:last-child a {
+  background-image: url(/assets/paint2.png);
+}
+
+/* line 387, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.shop-studio span,
+.ideas-inspiration h3 {
+  border-bottom: 2px solid #ddd;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  letter-spacing: .1em;
+}
+
+/* IDEAS & INSPIRATION */
+/* line 399, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.ideas-inspiration {
+  background-image: url(/assets/ideas.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  padding-top: 6.5%;
+  padding-bottom: 19%;
+  text-align: center;
+  color: white;
+}
+
+/* line 410, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.ideas-inspiration p {
+  font-family: 'Cardo', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 24px;
+  margin-top: 3.5%;
+}
+
+/* FAVORITES */
+/* line 420, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favorites {
+  text-align: center;
+  padding: 0 30px;
+  color: #938a83;
+}
+
+/* line 426, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown li {
+  width: 20%;
+  margin: 0 10px;
+  flex: 1 1 auto;
+}
+
+/* line 432, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favorites h2 {
+  font-size: 18px;
+  letter-spacing: .11em;
+  line-height: 17px;
+  font-weight: 300;
+}
+
+/* line 439, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favorites h6 {
+  color: #938a83;
+}
+
+/* line 443, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown a.favorites-img {
+  border: none;
+}
+
+/* line 447, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favorites > p {
+  padding: 22px 0;
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 27px;
+  font-style: italic;
+  margin: auto;
+  border-bottom: 1px solid;
+}
+
+/* line 457, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown {
+  margin: 40px 0;
+}
+
+/* line 461, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown img {
+  margin-bottom: 10px;
+}
+
+/* line 465, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown small {
+  color: #df1f39;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* line 473, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown h6 {
+  padding: 14px;
+  font-size: 16px;
+  letter-spacing: .15em;
+}
+
+/* line 479, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown i {
+  color: #c7beb4;
+  padding: 19px 0;
+  margin: 0 27px;
+  font-size: 16px;
+  display: block;
+  border-top: 1px solid;
+  font-style: italic;
+}
+
+/* line 489, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown .desc {
+  padding: 0 15px;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* line 496, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown span {
+  display: block;
+  font-style: italic;
+  font-size: 20px;
+  padding: 29px 0;
+}
+
+/* line 503, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown a {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 11px;
+  color: #df1f39;
+  border-bottom: 1px solid;
+  display: inline-block;
+  letter-spacing: .1em;
+  margin-bottom: 20px;
+}
+
+/* line 515, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.prod-showdown a:hover {
+  /*font-weight: 600;*/
+  border-bottom-width: 2px;
+  margin-bottom: 19px;
+  color: #bf1134;
+}
+
+/* FOOTER */
+/* line 524, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer {
+  background: #555;
+  text-align: center;
+  color: white;
+  padding-bottom: 70px;
+}
+
+/* line 531, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.footer-top {
+  text-transform: uppercase;
+  position: relative;
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* line 542, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.footer-top .flist {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: .1em;
+  margin: auto;
+}
+
+/* line 549, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.footer-top .flist li {
+  margin: 0 15px;
+}
+
+/* line 553, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.footer-top .social-media {
+  position: absolute;
+  color: #ccc;
+  right: 0;
+  top: 0;
+  margin: 28px;
+  font-size: 18px;
+}
+
+/* line 562, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.footer-top .social-media li {
+  margin: 0 8px;
+}
+
+/* line 566, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer form {
+  padding: 5px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: .1em;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+/* line 577, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer form span {
+  display: block;
+  height: 15px;
+  float: left;
+  padding: 10px 0;
+}
+
+/* line 584, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer input {
+  width: 240px;
+  padding: 0 15px !important;
+  height: 35px;
+  background: transparent;
+  border: 1px solid white !important;
+  margin-left: 15px;
+  font-family: 'Cardo', serif !important;
+  float: left;
+}
+
+/* line 595, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer .button {
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  float: left;
+}
+
+/* line 602, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer .button a {
+  padding: 6px 49px;
+  background: #f8c0c7;
+  display: block;
+}
+
+/* line 608, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer .button:hover a {
+  background: #e73e51;
+}
+
+/* line 612, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+footer .copyright {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* line 617, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+a.envelope-link:hover {
+  color: white;
+}
+
+/* line 621, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: white;
+}
+
+/* line 624, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: white;
+}
+
+/* line 627, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: white;
+}
+
+/* line 630, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: white;
+}
+
+/******************************************/
+/************ DA BEAUTY STUDIO ************/
+/******************************************/
+/* GIRL */
+/* line 642, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.girl {
+  background-image: url(/assets/girl.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* line 650, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.girl p {
+  font-family: 'Cardo', serif;
+  font-size: 29px;
+  line-height: 36px;
+  width: 640px;
+  text-align: center;
+  margin: 15% auto 7.7%;
+  color: #3a3e42;
+}
+
+/* DA BEAUTY STUDIO LIL'*/
+/* line 662, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-studio {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* line 668, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-studio h3,
+.page-content-bottom h3 {
+  color: #86786e;
+  font-size: 16px;
+  letter-spacing: .15em;
+  margin-top: 37px;
+}
+
+/* line 676, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-studio h3 small,
+.page-content-bottom h3 small {
+  color: #c7beb4;
+  font-family: 'Cardo', serif;
+  font-style: italic;
+  font-size: 14px;
+  text-transform: none;
+  margin-bottom: -15px;
+  letter-spacing: normal;
+  display: block;
+}
+
+/* line 688, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-studio .hor-line,
+.page-content-bottom .hor-line {
+  margin: 4px 25px;
+  background: #c7beb4;
+  opacity: .5;
+}
+
+/* line 695, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown .img-container,
+.makeup-artist .img-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* line 706, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown img,
+.makeup-artist img {
+  height: 100%;
+  margin: 0;
+  display: block;
+}
+
+/* line 712, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown h6 {
+  color: #df1f39;
+  font-weight: 600;
+}
+
+/* line 717, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown .divider {
+  width: 160px;
+  background: #dfdad5;
+  height: 1px;
+  margin: auto;
+}
+
+/* line 724, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown li p {
+  margin-top: 22px;
+  color: #86786e;
+}
+
+/* line 729, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown li a {
+  margin-top: 25px;
+  margin-bottom: 0;
+  color: #c7beb4;
+}
+
+/* line 735, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.beauty-showdown li:hover a {
+  margin-bottom: -1px;
+}
+
+/******************************************/
+/************* DA SINGLE PAGE *************/
+/******************************************/
+/* line 745, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.page-content-top {
+  overflow: hidden;
+  margin-top: 95px;
+}
+
+/* line 751, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist > li,
+.mis-cosas > li {
+  width: 50%;
+  overflow: hidden;
+}
+
+/* line 756, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist .profile {
+  background: #fcfbfa;
+  overflow: hidden;
+  padding: 40px 50px 60px;
+  text-align: center;
+}
+
+/* line 763, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist h3 {
+  color: #e73e51;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  letter-spacing: .2em;
+  font-weight: 600;
+}
+
+/* line 772, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist .social-media {
+  font-size: 22px;
+  margin: 26px auto;
+  width: 245px;
+}
+
+/* line 778, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist .social-media li {
+  margin: auto 15px;
+  color: #ccc;
+}
+
+/* line 783, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist .social-media li:hover {
+  color: #4c4c4c;
+}
+
+/* line 787, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.makeup-artist .profile p {
+  padding: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #85786d;
+}
+
+/* line 795, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+a.website {
+  font-size: 14px;
+  color: #e73e51;
+  display: block;
+  margin: 32px 0;
+}
+
+/* line 802, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.book-me {
+  font-size: 16px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  display: inline-block;
+  margin: auto;
+  color: white;
+}
+
+/* line 812, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.book-me a {
+  padding: 10px 62px;
+  background: #f8c0c7;
+  display: block;
+}
+
+/* line 818, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.book-me:hover a {
+  background: #e73e51;
+}
+
+/* line 822, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed > ul {
+  margin-top: 20px;
+  padding-left: 45px;
+  padding-right: 40px;
+  text-align: left;
+}
+
+/* line 829, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed > ul > li {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dfdad5;
+}
+
+/* line 834, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed > ul > li:last-child {
+  border: none;
+}
+
+/* line 838, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed .bottom > li:last-child {
+  float: none;
+  margin-left: 150px;
+}
+
+/* line 843, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed .feed-img {
+  width: 115px;
+  height: 115px;
+  overflow: hidden;
+}
+
+/* line 849, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed .feed-img img {
+  margin-left: -50%;
+}
+
+/* line 853, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed h6 {
+  text-align: left;
+  font-size: 10px;
+  line-height: 35px !important;
+  color: #c5beb2;
+  letter-spacing: .2em;
+  font-weight: 400;
+}
+
+/* line 862, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed p {
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  color: #85786d;
+  font-weight: 300;
+  margin-right: 50px;
+}
+
+/* line 870, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.social-feed p i {
+  color: #ea3b4d;
+  font-style: normal;
+}
+
+/* Mis favoritos 2*/
+/* line 877, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favs-showdown {
+  padding-left: 55px;
+  padding-right: 50px;
+  color: #86786d;
+  text-align: center;
+}
+
+/* line 884, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favs-showdown img {
+  width: 100%;
+  margin: auto;
+}
+
+/* line 889, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favs-showdown h6 {
+  padding: 14px 0;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+/* line 896, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favs-showdown .divider {
+  width: 88px;
+  background: #dfdad5;
+  height: 1px;
+  margin: auto;
+}
+
+/* line 903, /home/cplopez4/spree-clean/app/assets/stylesheets/style.css.scss */
+.favs-showdown span {
+  font-size: 16px;
+  padding-top: 14px;
+  padding-bottom: 20px;
+}
