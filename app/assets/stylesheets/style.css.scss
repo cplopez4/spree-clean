@@ -105,6 +105,20 @@ span[itemprop='priceCurrency'] {
 	margin-top: 95px;
 }
 
+h6 a.name-link {
+	color: #df1f39 !important;
+	font-weight: 600;
+	font-size: 16px;
+	letter-spacing: .15em;
+	border: none;
+	display: block;
+	margin-top: 0px !important;
+}
+
+h6 a.name-link:hover {
+	color: #bf1134 !important;
+}
+
 .slideme_container button.arrow{
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
@@ -153,7 +167,8 @@ header {
 	font-family: 'Cardo', serif;
 	font-weight: 400;
 	font-style: italic;
-	font-size: 11px;
+	font-size: 13px;
+	padding-bottom: 1px;
 }
 
 .header-top ul {
@@ -456,7 +471,7 @@ nav li {
 
 .prod-showdown h6 {
 	padding: 14px;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: .15em;
 }
 
@@ -474,13 +489,13 @@ nav li {
 	padding: 0 15px;
 	line-height: 20px;
 	font-weight: 400;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .prod-showdown span {
 	display: block;
 	font-style: italic;
-	font-size: 18px;
+	font-size: 20px;
 	padding: 29px 0;
 }
 

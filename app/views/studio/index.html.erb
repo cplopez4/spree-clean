@@ -17,7 +17,7 @@
 					<div class="img-container">
 						<%= image_tag 'artist2.jpg' %>
 					</div>
-					<h6><%= artist.full_name %></h6>
+					<h6><%= link_to artist.full_name, '/studio/' + artist.id.to_s, :class => 'name-link' %></h6>
 					<div class="divider"></div>
 					<p class="desc"><%= truncate(artist.description, :length => 100, :separator => ' ') %></p>
 					<%= link_to 'read +', '/studio/' + artist.id.to_s %>

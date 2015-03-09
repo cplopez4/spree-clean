@@ -13,6 +13,12 @@ SpreeClean::Application.routes.draw do
     end
   end
 
+  get '/contact' => 'settings#contact', as: :contact
+  get '/about' => 'settings#about', as: :about
+  get '/policies' => 'settings#terms', as: :terms
+  get '/faq' => 'settings#faq', as: :faq
+  get '/shipping' => 'settings#shipping', as: :shipping
+
   post '/tools/exportxls' => 'tools#export_xls', as: :exportxls
   post '/tools/exportxls_correos' => 'tools#export_xls_correos', as: :exportxls_correos
   post '/tools/exportxls_chilexpress' => 'tools#export_xls_chilexpress', as: :exportxls_chilexpress
