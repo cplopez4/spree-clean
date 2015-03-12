@@ -6,7 +6,7 @@
 
 
 * { margin: 0; padding: 0; list-style: none; text-rendering: optimizeLegibility;}
-ul { overflow: hidden;}
+ul { overflow: hidden; }
 ul>li { float: left;}
 a { color: inherit; text-decoration: none;}
 h1, h2, h3, h4, h5, h6, .lato {
@@ -16,6 +16,69 @@ h1, h2, h3, h4, h5, h6, .lato {
 	font-weight: 400;
 	text-align: center;
 	line-height: normal !important;
+}
+
+.settings-body{
+	line-height: 25px;
+	font-weight: 400;
+	font-size: 16px;
+	color: #86786e;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.settings-body h3.settings-title{
+	font-size: 20px;
+	letter-spacing: .15em;
+	margin-top: 0px;
+}
+
+.settings-body h3 small{
+	font-size: 20px !important;
+}
+
+.settings-content{
+	padding: 40px 0px 40px 0px;
+}
+
+.settings-body .settings-block h3{
+	color: #e73e51;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	font-size: 16px;
+	letter-spacing: .2em;
+	font-weight: 600;
+}
+
+.settings-body .settings-block h2{
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Cardo', serif;
+	margin-top: 15px;
+}
+
+.settings-content .hor-line{
+	width: 220px !important;
+	display: block !important;
+	margin: auto !important;
+}
+
+.settings-content.shipping-content .hor-line{
+	width: 110px !important;
+}
+
+.settings-block {
+	margin-bottom: 20px;
+	margin-top: 25px;
+}
+
+.settings-block ul{
+	padding-left: 30px;
+}
+
+.settings-block ul.settings-list > li {
+	list-style-type: square;
+	float: none;
 }
 
 .header-top-fix{
@@ -150,7 +213,7 @@ header {
 	top: 0;
 	color: white;
 	background: rgba(0,0,0,.7);
-	padding-right: 30px;
+	/*padding-right: 30px;*/
 	z-index: 100;
 }
 
@@ -169,11 +232,14 @@ header {
 	font-style: italic;
 	font-size: 13px;
 	padding-bottom: 1px;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
 }
 
 .header-top ul {
 	float: right;
 	line-height: 52px;
+	margin-bottom: 0px;
 }
 .header-top ul li:last-child {
 	margin-left: 24px;
@@ -664,7 +730,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .beauty-studio h3,
-.page-content-bottom h3 {
+.page-content-bottom h3, .settings-body h3 {
 	color: #86786e;
 	font-size: 16px;
 	letter-spacing: .15em;
@@ -672,7 +738,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .beauty-studio h3 small,
-.page-content-bottom h3 small {
+.page-content-bottom h3 small, .settings-body h3 small {
 	color: #c7beb4;
 	font-family: 'Cardo', serif;
 	font-style: italic;
@@ -684,7 +750,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }	
 
 .beauty-studio .hor-line,
-.page-content-bottom .hor-line {
+.page-content-bottom .hor-line, .settings-body .hor-line {
 	margin: 4px 25px;
 	background: #c7beb4;
 	opacity: .5;

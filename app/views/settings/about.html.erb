@@ -1,0 +1,100 @@
+<!-- Bootstrap Core CSS -->
+<%= stylesheet_link_tag 'bootstrap.min' %>
+
+<!-- Custom CSS -->
+<%= stylesheet_link_tag 'grayscale' %>
+
+<!-- Custom Fonts -->
+<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<div id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Intro Header -->
+    <div class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 center-slide-text">
+                        <h1 class="brand-heading"><%= image_tag 'logo.png' %></h1>
+                        <p class="intro-text">Reinventando la forma en que las mujeres disfrutan el maquillaje</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Nuestros productos</h2>
+                <p>Creemos que un buen maquillaje comienza con cuidar cada detalle del proceso productivo, el el cual se entra en satisfacer las necesidades de nuestra comunidad.</p>
+                <p>Antora es producido en el corazón de New York, donde se unen las tendencias y abundan los estilos, convirtiéndose en el lugar perfecto para el nacimiento de nuestra marca.</p>
+                <p><%= image_tag 'about_prod1.jpg' %><%= image_tag 'about_prod2.jpg' %></p>
+                <p><%= image_tag 'about_prod3.jpg' %><%= image_tag 'about_prod4.jpg' %></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Nuestra Empresa</h2>
+                    <p>Repensando todo lo que se ha hecho hasta ahora, queremos reinventar  la forma en que las mujeres utilizan, compran y disfrutan el maquillaje.</p>
+                    <p>Estamos liderando una nueva era de la industria de la belleza, acercando nuestros productos a los maquilladores y trabajando colaborativamente con ellos para obtener el mejor producto posible.</p>
+                    <a href="/products" class="shop-btn btn btn-default btn-lg">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contáctanos</h2>
+                <p>Puedes contactarnos a nuestro correo o a través de nuestras redes sociales</p>
+                <p><a href="mailto:contacto@antora.com">contacto@antora.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a target="_blank" href="https://twitter.com/Antora" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/Antora" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://plus.google.com/+Antora/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- Bootstrap Core JavaScript -->
+    <%= javascript_include_tag 'bootstrap.min' %>
+
+    <!-- Plugin JavaScript -->
+    <%= javascript_include_tag 'jquery.easing.min' %>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <!-- Custom Theme JavaScript -->
+    <%= javascript_include_tag 'grayscale' %>
+</div>    
