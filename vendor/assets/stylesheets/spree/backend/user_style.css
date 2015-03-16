@@ -7,3 +7,7 @@ div.fa-file-excel-o{
 #admin-menu li a span.text{
 	font-size: 11px;
 }
+
+.field img.form-picture {
+	width: 100%;
+}

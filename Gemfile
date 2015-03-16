@@ -29,6 +29,9 @@ gem "rack-reverse-proxy", github: 'cplopez4/rack-reverse-proxy', require: 'rack/
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Windows Azure BLOB Storage
+gem 'waz-storage'
+
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm', github: 'capistrano/rvm'

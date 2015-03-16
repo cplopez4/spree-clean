@@ -15,7 +15,7 @@
 			<li>
 				<div class="profile">
 					<div class="img-container">
-						<%= image_tag 'artist2.jpg', :alt => '' %>
+						<%= image_tag (@artist.picture || 'artist2.jpg'), :alt => '' %>
 					</div>
 					<h3><%= @artist.full_name %></h3>
 					<div class="divider"></div>

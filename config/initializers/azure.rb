@@ -1,0 +1,1 @@
+WAZ::Storage::Base.establish_connection!(:account_name => "portalvhdsfksvk65nmljt", :access_key => "Yp5kJbW+koRJxBY7ngYaD15hoqW+pEB5h/6nluKmKrlbyNbghrkc9YNJbI/8IkhrWx1TGrHn8scNO7Krv01WKQ==")

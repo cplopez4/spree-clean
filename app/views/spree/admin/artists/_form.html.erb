@@ -68,5 +68,16 @@
       <%= f.text_area :description, :class => 'fullwidth' %>
       <%= error_message_on :artist, :description %>
     <% end %>
+
+    <% if @artist.picture %>
+      <div class="field">
+        <label><span>Foto Actual</span></label>
+        <%= image_tag @artist.picture, :class => 'form-picture'%>
+      </div>
+    <% end %>
+    <%= f.field_container :picture  do %>
+      <%= f.label :picture, Spree.t('Nueva foto de perfil') %>
+      <%= f.file_field :picture, :class => 'fullwidth' %>
+    <% end %>
   </div>
 </div>
