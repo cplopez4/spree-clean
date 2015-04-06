@@ -911,9 +911,9 @@ a.website {
 	overflow: hidden;
 }
 
-.social-feed .feed-img img {
+/*.social-feed .feed-img img {
 	margin-left: -50%;
-}
+}*/
 
 .social-feed h6 {
 	text-align: left;
@@ -969,4 +969,12 @@ a.website {
 	font-size: 16px;
 	padding-top: 14px;
 	padding-bottom: 20px;
+}
+
+.tweet-body a{
+	color: #e73e51;
+}
+
+.tweet-body a:hover{
+	color: #0088bb;
 }

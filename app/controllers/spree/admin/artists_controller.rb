@@ -16,7 +16,7 @@ module Spree
 				if(params[:artist][:picture])
 					params[:artist][:picture] = Photo.upload_file(params[:artist][:picture])
 				end
-				
+
 			    invoke_callbacks(:update, :before)
 			    if @object.update_attributes(permitted_resource_params)
 			      invoke_callbacks(:update, :after)

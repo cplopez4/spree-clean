@@ -43,31 +43,40 @@
 				</div>
 				<div class="social-feed">
 					<ul>
-						<li>
-							<h6>Instagram</h6>
-							<ul class="bottom">
-								<li  class="feed-img">
-									<%= image_tag 'snoopy.jpg' %>
-								</li>
-								<li>
-									<p>"Night Pary" work in progress con el talentoso fotógrafo <i>@diegocorrea</i> y <i>@camilafanzani</i></p>
-								</li>
-							</ul>
-						</li>
-						<li>
+
+						<% if @instagram.length > 0 %>
+							<li>
+								<h6>Instagram</h6>
+								<ul class="bottom">
+									<li  class="feed-img">
+										<%= link_to (image_tag @instagram.first.images.low_resolution.url), @instagram.first.link, :target => "_blank" %>
+									</li>
+									<li>
+										<p><%= @instagram.first.caption.text if @instagram.first.caption.present? %></p>
+									</li>
+								</ul>
+							</li>
+						<% end %>
+
+						<!-- <li>
 							<h6>Blog</h6>
 							<ul class="bottom">
 								<li  class="feed-img">
-									<%= image_tag 'snoopy2.jpg' %>
+									<%# image_tag 'snoopy2.jpg' %>
 								</li>
 								<li>
 									<p>"Night Pary" work in progress con el talentoso fotógrafo <i>@diegocorrea</i> y <i>@camilafanzani</i></p>
 								</li>
 							</ul>
-						</li>
-						<li>
-							<h6>twitter</h6>
-							<p>RT <i>@halconmatinal:</i> Muy buen día,con el doctor Arellano hablaremos de los ronquidos. preguntas?</p>
+						</li> -->
+
+						<% if @twitter.length > 0 %>
+							<li>
+								<h6>twitter</h6>
+								<p class="tweet-body"><%= @twitter.first[:text].html_safe %></p>
+							</li>
+						<% end %>
+
 					</ul>
 				</div>
 			</li>
