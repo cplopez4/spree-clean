@@ -565,6 +565,10 @@ nav li {
 	padding: 29px 0;
 }
 
+.prod-showdown span.product-price {
+	padding-bottom: 0px;
+}
+
 .prod-showdown a {
 	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
@@ -582,6 +586,42 @@ nav li {
 	border-bottom-width: 2px;
 	margin-bottom: 19px;
 	color: #bf1134;
+}
+
+.dd-options {
+	position: static !important;
+}
+
+.prod-showdown a.dd-option {
+	margin-bottom: 0px;
+	display: block;
+	border: none;
+}
+
+#product-variants ul.dd-options li {
+	float: none;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+.prod-showdown a.dd-selected {
+	border: none;
+	margin-bottom: 0px;
+	display: block;
+	padding-bottom: 5px;
+}
+
+.dd-container {
+	margin: auto !important;
+}
+
+.dd-selected-text {
+	line-height: 54px;
+}
+
+.dd-option-image, .dd-selected-image {
+	margin-bottom: 0px !important;
 }
 
 /* FOOTER */

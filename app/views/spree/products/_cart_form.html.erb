@@ -5,23 +5,13 @@
       <div id="product-variants" class="columns five alpha">
         <h6 class="product-section-title"><%= Spree.t(:variants) %></h6>
         <ul>
-          <% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
-            <li>
-              <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => variant.price_in(current_currency).money  %>
-              <%= label_tag "variant_id_#{ variant.id }" do %>
-                <span class="variant-description">
-                  <%= variant_options variant %>
-                </span>
-                <% if variant_price variant %>
-                  <span class="price diff"><%= variant_price variant %></span>
-                <% end %>
+          <select name="variant_id" class="variant-dropdown" id="variant_identifier_<%= product.id %>" data-id="<%= product.id %>">
 
-                <% unless variant.can_supply? %>
-                  <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
-                <% end %>
-              <% end %>
-            </li>
-          <% end%>
+          <% product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>         
+            <option value="<%= variant.id %>" data-imagesrc="/assets/mineral/Mineral_Foundation_Almond.jpg" data-price="<%= variant.price_in(current_currency).money %>"><%= variant_options variant %></option>
+          <% end %>
+        
+          </select>
         </ul>
       </div>
     <% else %>

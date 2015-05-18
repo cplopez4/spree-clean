@@ -11,7 +11,7 @@
           <h6><%= truncate(product.name, :length => 50) %></h6>
           <i>Pressed Mineral</i>
           <p class="desc"><%= truncate(product.description, :length => 100, :separator => ' ') %></p>
-          <span itemprop="price"><%= display_price(product) %></span>
+          <span class="product-price" itemprop="price"><%= display_price(product) %></span>
 
           <div id="cart-form" data-hook="cart_form">
             <%= render :partial => '/spree/products/cart_form', :locals => { :product => product } %>
@@ -23,6 +23,20 @@
     <% end %>
     <% reset_cycle("classes") %>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    $.each($(".variant-dropdown"), function(index, value){
+      var id = $(value).attr("data-id");
+
+      $('#variant_identifier_'+id).ddslick({
+        onSelected: function(selectedData){
+            //console.log(selectedData);
+        }   
+      })
+    })
+  });
+</script>
 
 
 <!-- <li>
